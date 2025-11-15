@@ -36,6 +36,8 @@ async def chat(req: ChatRequest):
             {"role": "user", "content": req.message},
         ],
     )
+    #print REAL MODEL USED 真实模型版本
+    print(">>> REAL MODEL USED:", completion.model)
 
     reply_text = completion.choices[0].message.content
     return ChatResponse(reply=reply_text)
