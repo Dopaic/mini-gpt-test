@@ -30,7 +30,7 @@ def root():
 @app.post("/chat", response_model=ChatResponse)
 async def chat(req: ChatRequest):
     completion = client.chat.completions.create(
-        model="gpt-4o-mini",
+        model="gpt-5.1",
         messages=[
             {"role": "system", "content": "You are a helpful assistant."},
             {"role": "user", "content": req.message},
